@@ -1,0 +1,100 @@
+{
+  "name": "Purchase",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "description": "Nomor faktur pembelian"
+    },
+    "supplier_id": {
+      "type": "string",
+      "description": "ID supplier"
+    },
+    "supplier_name": {
+      "type": "string",
+      "description": "Nama supplier"
+    },
+    "items": {
+      "type": "array",
+      "description": "Item pembelian",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "barcode": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "discount_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "total": {
+      "type": "number"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "transfer",
+        "tempo"
+      ],
+      "description": "Metode pembayaran"
+    },
+    "paid_amount": {
+      "type": "number"
+    },
+    "debt_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Sisa utang"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "pending",
+        "returned"
+      ],
+      "default": "completed"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "total",
+    "payment_method"
+  ]
+}

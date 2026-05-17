@@ -1,0 +1,53 @@
+{
+  "name": "StockMutation",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "in",
+        "out",
+        "adjustment"
+      ],
+      "description": "Jenis mutasi: masuk, keluar, penyesuaian"
+    },
+    "qty_pcs": {
+      "type": "number",
+      "description": "Jumlah mutasi dalam PCS"
+    },
+    "stock_before": {
+      "type": "number"
+    },
+    "stock_after": {
+      "type": "number"
+    },
+    "reference_type": {
+      "type": "string",
+      "enum": [
+        "sale",
+        "purchase",
+        "return_sale",
+        "return_purchase",
+        "adjustment"
+      ],
+      "description": "Referensi transaksi"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "product_id",
+    "type",
+    "qty_pcs"
+  ]
+}

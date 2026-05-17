@@ -1,0 +1,26 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nama pelanggan"
+    },
+    "phone": {
+      "type": "string",
+      "description": "No HP"
+    },
+    "address": {
+      "type": "string",
+      "description": "Alamat"
+    },
+    "total_debt": {
+      "type": "number",
+      "default": 0,
+      "description": "Total piutang pelanggan"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

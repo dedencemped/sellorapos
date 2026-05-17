@@ -1,0 +1,55 @@
+{
+  "name": "Payment",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "debt_payment",
+        "receivable_payment"
+      ],
+      "description": "Pembayaran utang supplier atau piutang pelanggan"
+    },
+    "reference_type": {
+      "type": "string",
+      "enum": [
+        "sale",
+        "purchase"
+      ]
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID transaksi terkait"
+    },
+    "party_id": {
+      "type": "string",
+      "description": "ID customer atau supplier"
+    },
+    "party_name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "transfer",
+        "qris"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "payment_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "payment_method"
+  ]
+}

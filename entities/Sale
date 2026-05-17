@@ -1,0 +1,132 @@
+{
+  "name": "Sale",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "description": "Nomor faktur"
+    },
+    "customer_id": {
+      "type": "string",
+      "description": "ID pelanggan"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Nama pelanggan"
+    },
+    "items": {
+      "type": "array",
+      "description": "Item penjualan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "barcode": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal sebelum diskon"
+    },
+    "discount_type": {
+      "type": "string",
+      "enum": [
+        "percent",
+        "nominal"
+      ],
+      "description": "Tipe diskon"
+    },
+    "discount_value": {
+      "type": "number",
+      "default": 0
+    },
+    "discount_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "tax_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "tax_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "total": {
+      "type": "number",
+      "description": "Total bayar"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "transfer",
+        "qris",
+        "tempo"
+      ],
+      "description": "Metode pembayaran"
+    },
+    "paid_amount": {
+      "type": "number",
+      "description": "Jumlah dibayar"
+    },
+    "change_amount": {
+      "type": "number",
+      "description": "Kembalian"
+    },
+    "debt_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Sisa piutang"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "pending",
+        "returned"
+      ],
+      "default": "completed"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "sale_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Jatuh tempo piutang"
+    },
+    "cashier_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "total",
+    "payment_method"
+  ]
+}

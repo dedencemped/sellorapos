@@ -1,0 +1,26 @@
+{
+  "name": "Supplier",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nama supplier"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Kontak"
+    },
+    "address": {
+      "type": "string",
+      "description": "Alamat"
+    },
+    "total_debt": {
+      "type": "number",
+      "default": 0,
+      "description": "Total utang ke supplier"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

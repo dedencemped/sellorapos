@@ -1,0 +1,66 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "barcode": {
+      "type": "string",
+      "description": "Barcode/kode produk"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nama produk"
+    },
+    "category": {
+      "type": "string",
+      "description": "Kategori produk"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Merek produk"
+    },
+    "pcs_per_dus": {
+      "type": "number",
+      "default": 1,
+      "description": "Jumlah PCS per DUS"
+    },
+    "buy_price_pcs": {
+      "type": "number",
+      "description": "Harga beli per PCS"
+    },
+    "buy_price_dus": {
+      "type": "number",
+      "description": "Harga beli per DUS"
+    },
+    "sell_price_pcs": {
+      "type": "number",
+      "description": "Harga jual per PCS"
+    },
+    "sell_price_dus": {
+      "type": "number",
+      "description": "Harga jual per DUS"
+    },
+    "stock_pcs": {
+      "type": "number",
+      "default": 0,
+      "description": "Stok dalam PCS"
+    },
+    "min_stock_pcs": {
+      "type": "number",
+      "default": 0,
+      "description": "Stok minimum dalam PCS"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL gambar produk"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    
+  },
+  "required": [
+    "name",
+    "sell_price_pcs"
+  ]
+}
+}
