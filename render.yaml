@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: sellorapos-backend
+    runtime: node
+    repo: https://github.com/dedencemped/sellorapos
+    plan: free
+    branch: master
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MYSQL_HOST
+        fromDatabase:
+          name: sellorapos-db
+          property: host
+      - key: MYSQL_PORT
+        fromDatabase:
+          name: sellorapos-db
+          property: port
+      - key: MYSQL_USER
+        fromDatabase:
+          name: sellorapos-db
+          property: user
+      - key: MYSQL_PASSWORD
+        fromDatabase:
+          name: sellorapos-db
+          property: password
+      - key: MYSQL_DATABASE
+        fromDatabase:
+          name: sellorapos-db
+          property: database
+
+databases:
+  - name: sellorapos-db
+    databaseName: sellorapos
+    user: sellorapos
+    plan: free
